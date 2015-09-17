@@ -41,14 +41,15 @@
 
  	void move()
  	{
-		myX = myX + (int)(Math.random()*3)-1;
-		myY = myY + (int)(Math.random()*3)-1;
+		myX = myX + (int)(Math.random()*30)-1;
+		myY = myY + (int)(Math.random()*30)-1;
  	}
 
 
  	void show()
  	{
- 		fill(colour, colour, colour);
+ 		//fill(colour, colour, colour);
+ 		fill(0,(int)(Math.random()*240)+16,0);
  		noStroke();
  		ellipse(myX, myY, 10, 10);
  	}
