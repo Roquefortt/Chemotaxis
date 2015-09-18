@@ -47,8 +47,8 @@
  	{
 		//myX = myX + (int)(Math.random()*10)-1;
 		//myX = myX +pmouseX;
-		myX = myX + (int)(Math.random()*3)-1;
-		myY = myY + (int)(Math.random()*3)-1;
+		myX = myX + (int)(Math.random()*30)-1;
+		myY = myY + (int)(Math.random()*30)-1;
 
 	/*	int direction = (int)(Math.random()*4);
 
@@ -71,10 +71,10 @@
 		 {
 			myY = myY - 20; //up
 		 }
-
+*/
 	 }
 
-*/
+
  	void show()
  	{
  		fill(myColor, myColor, myColor);
