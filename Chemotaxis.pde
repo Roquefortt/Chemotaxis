@@ -8,6 +8,7 @@ Bacteria slime;
  	//background(143, 143, 143);
  }   
 
+//position is getting reset each time this runs.
  void draw()   
  {    
  	//move and show the bacteria  
