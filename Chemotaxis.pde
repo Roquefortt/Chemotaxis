@@ -1,54 +1,45 @@
  //declare bacteria variables here   
-Bacteria slime;
+int myX, myY, myColor;
 
  void setup()   
- {     
- 	//initialize bacteria variables here   
+ {      
  	size(400, 400);
- 	//background(143, 143, 143);
  }   
 
-//position is getting reset each time this runs.
  void draw()   
  {    
- 	//move and show the bacteria  
- 	background(143, 143, 143);
-    slime = new Bacteria (100, 100); 
-    slime.move();
-    slime.show();
-   
-   // Bacteria [] colony = new Bacteria [4];;
+ 	background(14, 85, 62);
 
-  /*  Bacteria [] colony;
-    colony = new Bacteria [4];
+ 	if (mousePressed)
+ 	{
+ 		ellipse(mouseX, mouseY, 30, 30);
+ 	}
 
-    for (int i=0; i < 5; i++)
+    Bacteria [] colony = new Bacteria [8];
+    for (int i=0; i < colony.length; i = i + 1)
     {
-    	colony[i] = new Bacteria();
+    	colony[i] = new Bacteria(myX,myY);
+    	colony[i].move();
+  		colony[i].show();
     }  
- */
-
  }  
-
 
 //mouseX= another var so it'll go towards mouse
  class Bacteria    
  {     
  	//lots of java!   
- 	int myX, myY, myColor;
  	//int mouseX = pmouseX; 
 
  	Bacteria(int x, int y)
  	{
- 		myX = x;
- 		myY = y;
- 		myColor = color((int)(Math.random()*256));
+ 		//myColor = color((int)(Math.random()*240)+16);
+ 		myColor = color(71, 141, 118);
+ 		myX = myX + (int)(Math.random()*3)-1;
+		myY = myY + (int)(Math.random()*3)-1;
  	}
 
  	void move()
  	{
-		//myX = myX + (int)(Math.random()*10)-1;
-		//myX = myX + pmouseX;
 		myX = myX + (int)(Math.random()*3)-1;
 		myY = myY + (int)(Math.random()*3)-1;
 
@@ -76,12 +67,11 @@ Bacteria slime;
 */
 	 }
 
-
  	void show()
  	{
- 		//fill(myColor, myColor, myColor);
- 		fill(0, (int)(Math.random()*240)+16, 0);
+ 		//fill(0, (int)(Math.random()*240)+16, 0);
+ 		fill (myColor);
  		noStroke();
- 		ellipse(myX, myY, 10, 10);
+ 		ellipse(myX+150, myY+150, 10, 10);
  	}
  }    
