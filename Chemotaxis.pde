@@ -1,5 +1,7 @@
  //declare bacteria variables here   
 int myX, myY, myColor;
+int sizeX = 30;
+int sizeY = 30;
 
  void setup()   
  {      
@@ -12,27 +14,38 @@ int myX, myY, myColor;
 
  	if (mousePressed)
  	{
- 		ellipse(mouseX, mouseY, 30, 30);
+ 		ellipse(mouseX, mouseY, sizeX, sizeY);
  	}
 
-    Bacteria [] colony = new Bacteria [8];
-    for (int i=0; i < colony.length; i = i + 1)
+
+/* if bacteria doesnt get green, 
+  	if (get(myX, myY) != color(71, 141, 118))
+ 	{
+ 		sizeX++;
+ 		sizeY++;
+ 		//System.out.print("nom");
+ 	}
+   */
+
+    Bacteria [] colony = new Bacteria [10];
+    for (int i=0; i < colony.length; i ++)
     {
     	colony[i] = new Bacteria(myX,myY);
+
     	colony[i].move();
-  		colony[i].show();
+	  	colony[i].show();
+	 } 
+
     }  
- }  
+
 
 //mouseX= another var so it'll go towards mouse
  class Bacteria    
  {     
  	//lots of java!   
- 	//int mouseX = pmouseX; 
 
  	Bacteria(int x, int y)
  	{
- 		//myColor = color((int)(Math.random()*240)+16);
  		myColor = color(71, 141, 118);
  		myX = myX + (int)(Math.random()*3)-1;
 		myY = myY + (int)(Math.random()*3)-1;
@@ -42,29 +55,6 @@ int myX, myY, myColor;
  	{
 		myX = myX + (int)(Math.random()*3)-1;
 		myY = myY + (int)(Math.random()*3)-1;
-
-	/*	int direction = (int)(Math.random()*4);
-
-		if(direction == 0)
-		{
-		 	myX = myX + 20; //right
-		}
-
-		 else if(direction == 1)
-		 {
-			myX = myX - 20; //left
-		 }
-
-		 else if(direction == 2)
-		 {
-			myY = myY + 20; //down
-		 }
-
-		 else // direction must be 3
-		 {
-			myY = myY - 20; //up
-		 }
-*/
 	 }
 
  	void show()
