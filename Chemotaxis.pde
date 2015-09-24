@@ -6,6 +6,7 @@ int sizeY = 30;
  void setup()   
  {      
  	size(400, 400);
+ 	frameRate(20);
  }   
 
  void draw()   
@@ -27,16 +28,18 @@ int sizeY = 30;
  	}
    */
 
-    Bacteria [] colony = new Bacteria [10];
-    for (int i=0; i < colony.length; i ++)
-    {
-    	colony[i] = new Bacteria(myX,myY);
+	
+	    Bacteria [] colony = new Bacteria [10];
+	    for (int i = 0; i < colony.length; i ++)
+	    {
+	    	colony[i] = new Bacteria(myX,myY);
+	    	colony[i].move();
+		  	colony[i].show();
+		 } 
+		// System.out.print(" " + colony.length);
+		
 
-    	colony[i].move();
-	  	colony[i].show();
-	 } 
-
-    }  
+}  
 
 
 //mouseX= another var so it'll go towards mouse
@@ -47,8 +50,6 @@ int sizeY = 30;
  	Bacteria(int x, int y)
  	{
  		myColor = color(71, 141, 118);
- 		myX = myX + (int)(Math.random()*3)-1;
-		myY = myY + (int)(Math.random()*3)-1;
  	}
 
  	void move()
