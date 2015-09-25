@@ -28,7 +28,7 @@ int sizeY = 30;
  	}
    */
 
-	
+	//dont use 10. 10 = 0 in index #
 	    Bacteria [] colony = new Bacteria [10];
 	    for (int i = 0; i < colony.length; i ++)
 	    {
