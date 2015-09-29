@@ -2,7 +2,7 @@
 Bacteria [] colony;
 int sizeX = 30;
 int sizeY = 30;
-	int myX, myY;
+	
 
  void setup()   
  {      
@@ -19,30 +19,23 @@ int sizeY = 30;
  void draw()   
  {    
  	background(14, 85, 62);
-	
-  	if (get(myX, myY) == color(71, 141, 118))
- 	{
- 		sizeX++;
- 		sizeY++;
- 		//System.out.print("nom");
- 	}
 
 	for (int i = 0; i < colony.length; i++)
  	{
 		colony[i].move();
 		colony[i].show();
-
  	}
+
 
  	if (mousePressed)
  	{
- 		fill(0, 100, 0);
+ 		fill(39, 116, 85);
+ 		noStroke();
  		ellipse(mouseX, mouseY, sizeX, sizeY);
  	}
 
 		// System.out.print(" " + colony.length);
 		
-
 }  
 
  class Bacteria    
@@ -59,15 +52,30 @@ int sizeY = 30;
 
  	void move()
  	{
+		if ((myX > 400 || myX < 0) || (myY < 0) || (myY > 400))
+	 	{
+		 	myX = 150;
+		 	myY = 150;
+	 	}
+
 		myX = myX + (int)(Math.random()*3)-1;
 		myY = myY + (int)(Math.random()*3)-1;
+
+		if (get(myX, myY) != color(14, 85, 62))
+	 	{
+	 		
+	 		//System.out.print("nom");
+	 	}
+	
+
+
 	 }
 
  	void show()
  	{
- 		//fill(0, (int)(Math.random()*240)+16, 0);
+
  		fill (myColor);
- 		noStroke();
+ 		stroke(255);
  		ellipse(myX, myY, 10, 10);
  	}
  }    
