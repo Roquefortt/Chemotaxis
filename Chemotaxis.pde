@@ -1,8 +1,5 @@
  //declare bacteria variables here   
 Bacteria [] colony;
-int sizeX = 30;
-int sizeY = 30;
-	
 
  void setup()   
  {      
@@ -22,19 +19,28 @@ int sizeY = 30;
 
 	for (int i = 0; i < colony.length; i++)
  	{
+ 		colony[i].mouseMoved();
 		colony[i].move();
 		colony[i].show();
  	}
-
 
  	if (mousePressed)
  	{
  		fill(39, 116, 85);
  		noStroke();
- 		ellipse(mouseX, mouseY, sizeX, sizeY);
- 	}
+ 		ellipse(mouseX, mouseY, 30, 30);
+ 		stroke(0);
 
-		// System.out.print(" " + colony.length);
+ 		//face
+ 		strokeWeight(2);
+ 		point(mouseX-5, mouseY-5);
+ 		point(mouseX+5, mouseY-5);
+
+ 		strokeWeight(1);
+ 		fill(14, 85, 62);
+ 		line(mouseX-5, mouseY+3, mouseX+3, mouseY+10);
+ 		line(mouseX+5, mouseY+3, mouseX-5, mouseY+10);
+ 	}
 		
 }  
 
@@ -60,22 +66,21 @@ int sizeY = 30;
 
 		myX = myX + (int)(Math.random()*3)-1;
 		myY = myY + (int)(Math.random()*3)-1;
-
-		if (get(myX, myY) != color(14, 85, 62))
-	 	{
-	 		
-	 		//System.out.print("nom");
-	 	}
-	
-
-
 	 }
+
+	void mouseMoved() {
+		myColor = myColor + 5;
+
+		if (myColor > 255) {
+		   myColor = 0;
+		}
+	}
 
  	void show()
  	{
-
- 		fill (myColor);
- 		stroke(255);
+ 		strokeWeight(1);
+ 		fill(myColor);
+ 		stroke(0);
  		ellipse(myX, myY, 10, 10);
  	}
  }    
