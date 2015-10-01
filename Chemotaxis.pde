@@ -6,7 +6,7 @@ Bacteria [] colony;
  	size(400, 400);
  	frameRate(20);
 
- 	colony = new Bacteria [50];
+ 	colony = new Bacteria [150];
  	for (int i = 0; i < colony.length; i++)
     {
     	colony[i] = new Bacteria();
@@ -51,8 +51,8 @@ Bacteria [] colony;
 
  	Bacteria()
  	{
- 		myX = 200;
-		myY = 200;
+ 		myX = (int)(Math.random()*400);
+		myY = (int)(Math.random()*400);
  		myColor = color(71, 141, 118);
  	}
 
@@ -80,7 +80,7 @@ Bacteria [] colony;
  	{
  		strokeWeight(1);
  		fill(myColor);
- 		stroke(0);
- 		ellipse(myX, myY, 10, 10);
+ 		noStroke();
+ 		ellipse(myX, myY, (int)(Math.random()*20), (int)(Math.random()*20));
  	}
  }    
