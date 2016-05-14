@@ -23,24 +23,6 @@ Bacteria [] colony;
 		colony[i].move();
 		colony[i].show();
  	}
-
- 	if (mousePressed)
- 	{
- 		fill(39, 116, 85);
- 		noStroke();
- 		ellipse(mouseX, mouseY, 30, 30);
- 		stroke(0);
-
- 		//face
- 		strokeWeight(2);
- 		point(mouseX-5, mouseY-5);
- 		point(mouseX+5, mouseY-5);
-
- 		strokeWeight(1);
- 		fill(14, 85, 62);
- 		line(mouseX-5, mouseY+3, mouseX+3, mouseY+10);
- 		line(mouseX+5, mouseY+3, mouseX-5, mouseY+10);
- 	}
 		
 }  
 
